@@ -20,8 +20,9 @@ public class PlanetAdapter extends ArrayAdapter<Planet> {
     private List<Planet> planetList;
     private Context context;
 
-    public PlanetAdapter(Context context, int resource, List<Planet> objects) {
-        super(context, resource, objects);
+    public PlanetAdapter(Context context, int resource, int tvID, List<Planet> objects) {
+        //super(context, R.layout.country_list_item, R.id.txtViewCountryName, objects);
+        super(context, resource, tvID, objects);
         this.context = context;
         this.planetList = objects;
     }

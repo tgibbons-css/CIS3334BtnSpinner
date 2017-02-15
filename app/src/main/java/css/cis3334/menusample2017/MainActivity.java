@@ -96,8 +96,12 @@ public class MainActivity extends AppCompatActivity {
         planetList.add(new Planet("Mars5", 227.9, 6787.0));
         planetList.add(new Planet("Mars6", 227.9, 6787.0));
 //        ArrayAdapter<Planet> planetAdapter = new ArrayAdapter<Planet>(this, android.R.layout.simple_list_item_1, planetList);
+//        planetAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 //        spinnerCustom.setAdapter(planetAdapter);
-        ArrayAdapter<Planet> planetAdapter = new PlanetAdapter(this, 0, planetList);
+        
+        // create the custom array adapter. The 3rd parameter is just a placeholder for the parent class pointing to any textview in the new layout.
+        ArrayAdapter<Planet> planetAdapter = new PlanetAdapter(this, R.layout.planet_row, R.id.textViewPlanetName, planetList);
+        planetAdapter.setDropDownViewResource(R.layout.planet_row);
         spinnerCustom.setAdapter(planetAdapter);
         spinnerCustom.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/planetLayout1">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewPlanetName" />
+        android:id="@+id/textViewPlanetName"
+        android:text="Planet Name Here"
+        android:textSize="18sp"
+        android:textStyle="normal|bold" />
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/PlanetLayout2">
 
         <TextView
             android:text="Distance:"
@@ -25,14 +30,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewPlanetDistance"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal|bold" />
 
         <TextView
             android:text="Diameter:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView8"
-            android:layout_weight="0.26" />
+            android:layout_weight="0.26"
+            android:textStyle="normal|bold" />
 
         <TextView
             android:layout_width="wrap_content"
