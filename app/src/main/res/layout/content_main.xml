@@ -25,10 +25,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinnerXML"
-        android:entries="@array/planets_array" />
+        android:entries="@array/planets_array"
+         />
 
     <TextView
-        android:text="Spinner with items from Java arraylist"
+        android:text="@string/spinner_with_items_from_java_arraylist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView2" />
@@ -36,29 +37,41 @@
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinnerJava" />
+        android:id="@+id/spinnerJava"
+         />
+
+    <TextView
+        android:text="Custom spinner "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerCustom" />
 
     <Button
-        android:text="Display items"
+        android:text="@string/display_items"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonDisplay"
-        android:onClick="buttonClick1 (MainActivity)" />
+        android:onClick="buttonClick1" />
 
     <Button
-        android:text="Button2"
+        android:text="@string/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button2" />
 
     <Button
-        android:text="Button3"
+        android:text="@string/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button3" />
 
     <TextView
-        android:text="Selected item: "
+        android:text="@string/selected_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textViewDisplayItem" />

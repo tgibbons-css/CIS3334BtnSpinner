@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    Spinner spinnerXML, spinnerJava;
+    Spinner spinnerXML, spinnerJava, spinnerCustom;
     TextView tvDisplayItem;
     Button btnDisplay,btn2,btn3;
 
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         //--------------------------------------
         spinnerXML = (Spinner) findViewById(R.id.spinnerXML);
         spinnerJava = (Spinner) findViewById(R.id.spinnerJava);
+        spinnerCustom = (Spinner) findViewById(R.id.spinnerCustom);
         tvDisplayItem = (TextView) findViewById(R.id.textViewDisplayItem);
         btnDisplay = (Button) findViewById(R.id.buttonDisplay);
         btn2 = (Button) findViewById(R.id.button2);
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         itemsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinnerJava.setAdapter(itemsAdapter);
-        //--------------------------------------
+        //------------
         spinnerJava.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -81,6 +82,36 @@ public class MainActivity extends AppCompatActivity {
                 //Another interface callback
             }
         });
+        //--------------------------------------
+
+
+        final ArrayList<Planet> planetList = new ArrayList<Planet>();
+        // planet data from http://www.enchantedlearning.com/subjects/astronomy/planets/
+        planetList.add(new Planet("Mercury", 57.9, 4800.0));
+        planetList.add(new Planet("Venus", 108.2, 12104.0));
+        planetList.add(new Planet("Mars", 227.9, 6787.0));
+        planetList.add(new Planet("Mars2", 227.9, 6787.0));
+        planetList.add(new Planet("Mars3", 227.9, 6787.0));
+        planetList.add(new Planet("Mars4", 227.9, 6787.0));
+        planetList.add(new Planet("Mars5", 227.9, 6787.0));
+        planetList.add(new Planet("Mars6", 227.9, 6787.0));
+//        ArrayAdapter<Planet> planetAdapter = new ArrayAdapter<Planet>(this, android.R.layout.simple_list_item_1, planetList);
+//        spinnerCustom.setAdapter(planetAdapter);
+        ArrayAdapter<Planet> planetAdapter = new PlanetAdapter(this, 0, planetList);
+        spinnerCustom.setAdapter(planetAdapter);
+        spinnerCustom.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Planet planet = planetList.get(position);
+                tvDisplayItem.setText("Custom Spinner selected : "+ planet.getName());
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                //Another interface callback
+            }
+        });
+
+
         //--------------------------------------
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
